@@ -41,6 +41,16 @@ class Alumno {
       this.materias[idMateria].unshift(calificacion);
     }
   }
+
+  promedio() {
+    var sumaCalif = 0, numCalif = 0;
+    for (var idMateria in this.materias) {
+      if (!this.materias[idMateria].length) continue;
+      numCalif++;
+      sumaCalif += this.materias[idMateria][0];
+    }
+    return sumaCalif/numCalif;
+  }
 }
 
 class Materia {
