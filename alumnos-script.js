@@ -9,16 +9,36 @@ class Alumno {
   }
 
   agregarMateria(materia) {
+    if (!materia.id){
+      console.log("Error al acceder al id de la materia");
+      return;
+    }
+
     this.materias[materia.id] = [];
   }
 
   agregarCalificacion(idMateria, calificacion) {
-    if (!this.materias[idMateria]) return;
-    if (this.materias[idMateria].length < MAX_CAL) {
+    if (!this.materias[idMateria]) {
+      console.log("El alumno no tiene registrada dicha materia");
+      return;
+    }
+
+    if (typeof(calificacion) !== "number"){
+      console.log("Calificacion inválida");
+      return;
+    }
+
+    if (this.materias[idMateria].length >= MAX_CAL){
+      console.log("Número máximo de calificaciones por materia alcanzado");
+      return;
+    }
+
+    if (!this.materias[idMateria].length ||
+        calificacion < this.materias[idMateria][0]) {
       this.materias[idMateria].push(calificacion);
     }
     else {
-      console.log("Número máximo de calificaciones por materia alcanzado");
+      this.materias[idMateria].unshift(calificacion);
     }
   }
 }
