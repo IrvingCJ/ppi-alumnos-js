@@ -1,3 +1,9 @@
+body {
+  font-size: 24px;
+  background: url(https://cdn.pixabay.com/photo/2017/01/26/21/32/background-2011768_960_720.jpg) no-repeat center fixed;
+  background-size: cover;
+}
+
 .nav_bar {
   margin: 0;
   padding: 0;
@@ -6,21 +12,21 @@
 
 .v_nav_bar {
   display: none;
+  width: 200px;
   position: absolute;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  width: 200px;
 }
 
 .block {
-  color: black;
-  text-align: center;
   padding: 14px 16px;
+  text-align: center;
+  color: black;
   background-color: #f3f3f3;
 }
 
 .block:hover {
-  background-color: #008CBA;
   color: white;
+  background-color: #008CBA;
 }
 
 .v_block {
@@ -41,4 +47,57 @@
 
 #el_calificaciones:hover #v_nav_cal {
   display: block;
+}
+
+.form {
+  width: 50%;
+  margin: auto;
+  padding: 1% 2%;
+  border: 2px solid #008CBA;
+  border-radius: 10px;
+  background-color: #f3f3f3;
+}
+
+.col_txt {
+  display: inline-block;
+  width: 28%;
+}
+
+.col_in {
+  display: inline-block;
+  width: 70%;
+}
+
+.label {
+}
+
+.in {
+  width: 100%;
+  margin: 1%;
+  border: 3px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+  font-size: inherit;
+  background-color: #f3f3f3;
+  transition: 1s;
+}
+
+.in:focus {
+  border: 3px solid #008CBA;
+}
+
+.button {
+  display: block;
+  margin: auto;
+  padding: 8px 16px;
+  border: 2px solid #008CBA;
+  border-radius: 5%;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.button:hover {
+  background-color: #008CBA;
+  color: white;
 }

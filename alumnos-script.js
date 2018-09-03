@@ -5,6 +5,7 @@ class Alumno {
     this.nombre = "";
     this.edad = 0;
     this.carrera = "";
+    this.correo = "";
     this.materias = {};
   }
 
