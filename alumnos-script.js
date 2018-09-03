@@ -12,26 +12,27 @@ class Alumno {
   agregarMateria(materia) {
     if (!materia.id){
       console.log("Error al acceder al id de la materia");
-      return;
+      return false;
     }
 
     this.materias[materia.id] = [];
+    return true;
   }
 
   agregarCalificacion(idMateria, calificacion) {
     if (!this.materias[idMateria]) {
       console.log("El alumno no tiene registrada dicha materia");
-      return;
+      return false;
     }
 
     if (typeof(calificacion) !== "number"){
       console.log("Calificacion inválida");
-      return;
+      return false;
     }
 
     if (this.materias[idMateria].length >= MAX_CAL){
       console.log("Número máximo de calificaciones por materia alcanzado");
-      return;
+      return false;
     }
 
     if (!this.materias[idMateria].length ||
@@ -41,6 +42,8 @@ class Alumno {
     else {
       this.materias[idMateria].unshift(calificacion);
     }
+
+    return true;
   }
 
   promedio() {
@@ -77,6 +80,30 @@ function agregaMateria() {
     console.log('Materia registrada');
 }
 
+function registraMateria() {
+    var datosRegistro = [];
+    const inputs = document.querySelectorAll('#form_asig_materia .in');
+    inputs.forEach(input => datosRegistro.push(input.value));
+
+    const alumnoIndex = alumnos.findIndex(alumno => alumno.nombre === datosRegistro[0]);
+    if (alumnoIndex === -1) {
+      console.log('El alumno no existe');
+      return;
+    }
+
+    const materiaIndex = materias.findIndex(materia => materia.id === datosRegistro[1]);
+    if (materiaIndex === -1) {
+      console.log('La materia no existe');
+      return;
+    }
+
+    if (!alumnos[alumnoIndex].agregarMateria(materias[materiaIndex])) {
+      return;
+    }
+
+    console.log('Materia asignada al alumno');
+}
+
 function agregarCalificacion() {
     var datosCalificacion = [];
     const inputs = document.querySelectorAll('#form_calificacion .in');
@@ -94,13 +121,18 @@ function agregarCalificacion() {
       return;
     }
 
-    alumnos[alumnoIndex].agregarCalificacion(datosCalificacion[1], parseFloat(datosCalificacion[2]));
+    if (!alumnos[alumnoIndex].agregarCalificacion(datosCalificacion[1], parseFloat(datosCalificacion[2]))) {
+      return;
+    }
+    
+    console.log('Calificación registrada');
 }
 
 var alumnos = [];
 var materias = [];
 
-const [botonAl, botonMat, botonCal] = document.querySelectorAll('.button');
+const [botonAl, botonMat, botonRegMat, botonCal] = document.querySelectorAll('.button');
 botonAl.addEventListener('click', agregaAlumno);
 botonMat.addEventListener('click', agregaMateria);
+botonRegMat.addEventListener('click', registraMateria);
 botonCal.addEventListener('click', agregarCalificacion);
