@@ -34,66 +34,95 @@
         </li>
       </ul>
     </div>
-    <form id="form_alumno" class="form">
-      <div class="col_txt">
-        <label class="label" for="nombre_al">Nombre:</label>
-      </div>
-      <div class="col_in">
-        <input class="in" type="text" name="nombre_al">
-      </div>
-      <div class="col_txt">
-        <label class="label" for="edad_al">Edad:</label>
-      </div>
-      <div class="col_in">
-        <input class="in" type="number" name="edad_al">
-      </div>
-      <div class="col_txt">
-        <label class="label" for="correo_al">Correo electrónico:</label>
-      </div>
-      <div class="col_in">
-        <input class="in" type="email" name="correo_al">
-      </div>
-      <div class="col_txt">
-        <label class="label" for="carrera_al">Carrera:</label>
-      </div>
-      <div class="col_in">
-        <input class="in" type="text" name="carrera_al">
-      </div>
-    </form>
-    <form id="form_materia" class="form">
-      <div class="col_txt">
-        <label class="label" for="id_mat">Clave:</label>
-      </div>
-      <div class="col_in">
-        <input class="in" type="text" name="id_mat">
-      </div>
-      <div class="col_txt">
-        <label class="label" for="nombre_mat">Nombre:</label>
-      </div>
-      <div class="col_in">
-        <input class="in" type="text" name="nombre_mat">
-      </div>
-    </form>
-    <form id="form_calificacion" class="form">
-      <div class="col_txt">
-        <label class="label" for="cal_nom_al">Nombre alumno:</label>
-      </div>
-      <div class="col_in">
-        <input class="in" type="text" name="cal_nom_al">
-      </div>
-      <div class="col_txt">
-        <label class="label" for="cal_nom_mat">Clave materia:</label>
-      </div>
-      <div class="col_in">
-        <input class="in" type="text" name="cal_nom_mat">
-      </div>
-      <div class="col_txt">
-        <label class="label" for="calif">Calificación:</label>
-      </div>
-      <div class="col_in">
-        <input class="in" type="number" name="calif">
-      </div>
-    </form>
+    <div id="formularios">
+      <form id="form_alumno" class="form">
+        <div id="campo_nombre_al">
+          <div class="col_txt">
+            <label class="label" for="nombre_al">Nombre:</label>
+          </div>
+          <div class="col_in">
+            <input class="in" type="text" name="nombre_al">
+          </div>
+        </div>
+        <div id="campo_edad_al">
+          <div class="col_txt">
+            <label class="label" for="edad_al">Edad:</label>
+          </div>
+          <div class="col_in">
+            <input class="in" type="number" name="edad_al">
+          </div>
+        </div>
+        <div id="campo_correo_al">
+          <div class="col_txt">
+            <label class="label" for="correo_al">Correo electrónico:</label>
+          </div>
+          <div class="col_in">
+            <input class="in" type="email" name="correo_al">
+          </div>
+        </div>
+        <div id="campo_carrera_al">
+          <div class="col_txt">
+            <label class="label" for="carrera_al">Carrera:</label>
+          </div>
+          <div class="col_in">
+            <input class="in" type="text" name="carrera_al">
+          </div>
+        </div>
+        <div id="boton_al">
+          <button class="button">Registrar</button>
+        </div>
+      </form>
+      <form id="form_materia" class="form">
+        <div id="campo_id_mat">
+          <div class="col_txt">
+            <label class="label" for="id_mat">Clave:</label>
+          </div>
+          <div class="col_in">
+            <input class="in" type="text" name="id_mat">
+          </div>
+        </div>
+        <div id="campo_nom_mat">
+          <div class="col_txt">
+            <label class="label" for="nombre_mat">Nombre:</label>
+          </div>
+          <div class="col_in">
+            <input class="in" type="text" name="nombre_mat">
+          </div>
+        </div>
+        <div id="boton_mat">
+          <button class="button">Registrar</button>
+        </div>
+      </form>
+      <form id="form_calificacion" class="form">
+        <div id="campo_nom_al_cal">
+          <div class="col_txt">
+            <label class="label" for="cal_nom_al">Nombre alumno:</label>
+          </div>
+          <div class="col_in">
+            <input class="in" type="text" name="cal_nom_al">
+          </div>
+        </div>
+        <div id="campo_nom_mat_cal">
+          <div class="col_txt">
+            <label class="label" for="cal_nom_mat">Clave materia:</label>
+          </div>
+          <div class="col_in">
+            <input class="in" type="text" name="cal_nom_mat">
+          </div>
+        </div>
+        <div id="campo_cal">
+          <div class="col_txt">
+            <label class="label" for="calif">Calificación:</label>
+          </div>
+          <div class="col_in">
+            <input class="in" type="number" name="calif">
+          </div>
+        </div>
+        <div id="boton_cal">
+          <button class="button">Registrar</button>
+        </div>
+      </form>
+    </div>
   </body>
   <script src="alumnos-script.js" charset="utf-8"></script>
 </html>
